@@ -1,0 +1,575 @@
+/* ============================
+   PETCALMER — Grupo VIP Ofertas
+   ============================ */
+
+:root {
+  --clr-brand:    #6B8E7A;
+  --clr-brand-dk: #4f6e5b;
+  --clr-wa:       #52a73b;
+  --clr-wa-dk:    #438b30;
+  --clr-bg:       #F7F3EE;
+  --clr-bg-alt:   #FFFFFF;
+  --clr-text:     #1e1d1f;
+  --clr-muted:    #6B6B6B;
+  --clr-border:   #E8E0D5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ==============================
+   HEADER
+   ============================== */
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: none;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 22px; /* Reduzido ainda mais */
+  width: auto;
+  display: block;
+}
+
+/* ==============================
+   BUTTONS
+   ============================== */
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #52b27f;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-wa:hover {
+  background-color: #489d70;
+  transform: scale(1.02);
+}
+
+/* (removido btn-wa--header) */
+
+/* ==============================
+   APPLE BLOCKS
+   ============================== */
+.apple-block {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-block-title {
+  font-size: clamp(40px, 6vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #1e1d1f;
+  margin-bottom: 12px;
+  line-height: 1.05;
+  padding: 0 24px;
+}
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.apple-block-title svg {
+  flex-shrink: 0;
+}
+
+/* Cores dos ícones vazados (SVG) */
+.icon-wa { color: #25D366; }
+.icon-tg { color: #0088CC; }
+.icon-ig { color: #E1306C; }
+.icon-yt { color: #FF0000; }
+
+.apple-block-subtitle {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 400;
+  color: #1e1d1f;
+  max-width: 700px;
+  margin: 0 auto 32px;
+  line-height: 1.4;
+  padding: 0 24px;
+}
+
+.apple-block-image {
+  margin-top: 48px;
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.block-primary-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px 24px 0 0;
+  object-fit: cover;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Floating QR Code */
+.qr-float {
+  position: absolute;
+  right: 48px;
+  top: -95px; /* Deixa a maior parte fora e 1/4 do QR code sobrepondo a imagem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 10;
+}
+
+.qr-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--clr-text);
+  background: #ffffff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.qr-box {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--clr-muted);
+}
+
+.qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+}
+
+.hero-image-placeholder {
+  height: 400px;
+}
+
+.block-gray {
+  background-color: #f5f5f7;
+}
+
+.block-white {
+  background-color: #ffffff;
+}
+
+/* Gradientes leves com a cor da plataforma no topo */
+.bg-wa-white {
+  background: linear-gradient(180deg, rgba(37, 211, 102, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+.bg-tg-gray {
+  background: linear-gradient(180deg, rgba(0, 136, 204, 0.05) 0%, rgba(245, 245, 247, 1) 100%);
+}
+.bg-ig-gray {
+  background: linear-gradient(180deg, rgba(225, 48, 108, 0.05) 0%, rgba(245, 245, 247, 1) 100%);
+}
+.bg-yt-white {
+  background: linear-gradient(180deg, rgba(255, 0, 0, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-apple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 17px;
+  font-weight: 800;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@keyframes ctaAttention {
+  0%, 100% { transform: scale(1); }
+  10%, 30% { transform: scale(1.03); }
+  20%, 40% { transform: scale(1.01); }
+  50% { transform: scale(1); }
+}
+
+.btn-apple-solid {
+  background-color: #52b27f;
+  color: #ffffff;
+  border: 1px solid #52b27f;
+  animation: ctaAttention 3s infinite;
+}
+
+.btn-apple-solid:hover {
+  background-color: #489d70;
+  border-color: #489d70;
+  transform: scale(1.02);
+}
+
+.btn-apple-outline {
+  background-color: transparent;
+  color: #52b27f;
+  border: 1px solid #52b27f;
+}
+
+.btn-apple-outline:hover {
+  background-color: rgba(82, 178, 127, 0.05);
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .btn-wa--header {
+    display: none !important;
+  }
+  .header-inner {
+    justify-content: center;
+  }
+  .hero-ctas {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-apple {
+    width: auto;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .apple-block {
+    padding-top: 80px;
+  }
+  .apple-block-title {
+    font-size: clamp(32px, 8vw, 42px);
+  }
+  .title-with-icon {
+    font-size: clamp(24px, 7vw, 32px);
+    white-space: nowrap;
+  }
+  .apple-block-image {
+    margin-top: 32px;
+    height: 250px;
+  }
+  .hero-image-placeholder {
+    height: 250px;
+  }
+  .block-primary-img {
+    border-radius: 16px 16px 0 0;
+  }
+  .qr-float {
+    display: none;
+  }
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+.site-footer {
+  background-color: #f5f5f7; /* mesmo que .block-gray */
+  padding: 48px 24px;
+  border-top: 1px solid rgba(30, 29, 31, 0.08);
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1d1f;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social-link:hover {
+  opacity: 0.55;
+  transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #1e1d1f;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+
+/* ícones que usam fill (YouTube, WhatsApp) */
+.footer-social-link svg.icon-fill {
+  fill: #1e1d1f;
+  stroke: none;
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+  .footer-social {
+    gap: 24px;
+  }
+}
+
+/* ============================================================
+   INSTITUTIONAL PAGES — APPLE LEGAL STYLE
+   ============================================================ */
+
+.inst-page {
+  background-color: #ffffff !important;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  line-height: 1.75;
+}
+
+.inst-header {
+  background: #ffffff;
+  border-bottom: 1px solid #d2d2d7;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.inst-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+}
+
+.inst-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.inst-meta {
+  font-size: 14px;
+  color: #6e6e73;
+  margin-bottom: 48px;
+}
+
+.inst-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1f;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 40px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d2d2d7;
+}
+
+.inst-body {
+  font-size: 16px;
+  color: #3a3a3c;
+  margin-bottom: 24px;
+}
+
+.inst-body p {
+  margin-bottom: 20px;
+}
+
+.inst-body a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.inst-body a:hover {
+  text-decoration: underline;
+}
+
+.inst-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 24px;
+}
+
+.inst-list-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #3a3a3c;
+}
+
+.inst-list-item::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #6e6e73;
+}
+
+.inst-footer {
+  border-top: 1px solid #d2d2d7;
+  margin-top: 80px;
+  padding: 24px 24px 60px;
+  text-align: center;
+  font-size: 12px;
+  color: #6e6e73;
+}
+
+.inst-footer-links {
+  margin-top: 8px;
+}
+
+.inst-footer-links a {
+  color: #6e6e73;
+  text-decoration: none;
+}
+
+.inst-footer-links a:hover {
+  text-decoration: underline;
+}
+
+.inst-footer-dot {
+  margin: 0 4px;
+}
+
+/* Homepage Footer Update */
+.footer-legal {
+  width: 100%;
+  border-top: 1px solid rgba(30, 29, 31, 0.08);
+  margin-top: 32px;
+  padding-top: 24px;
+  font-size: 12px;
+  color: #6e6e73;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-legal-links a {
+  color: #6e6e73;
+  text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .inst-container {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  .inst-title {
+    font-size: 28px;
+  }
+  .inst-section-title {
+    font-size: 12px;
+  }
+  .inst-body {
+    font-size: 15px;
+  }
+  .footer-legal {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer-legal-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
